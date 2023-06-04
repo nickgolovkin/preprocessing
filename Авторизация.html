@@ -1,0 +1,66 @@
+
+<html>
+<head><meta charset='utf-8'><meta name="viewport" content="width=device-width, initial-scale=1"><title>Авторизация</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"><style>.margins { margin-bottom: 1em; } a { text-decoration: none; } .row > * { padding-left: 0;  } .container-list { border: 1px solid #ced4da; height: 100px; overflow: hidden; padding: 0 !important;  border-radius: .375rem; background-image: none !important;} .list-item { margin-bottom: 0.375em; } .inner {
+  padding: 0.5em 1em;
+  height: 100px;
+  overflow-y: auto;
+}
+
+.out {
+    margin-bottom: 1em;
+}
+
+.bi.bi-heart-fill:hover {
+  fill: red;
+  transition: fill 0.15s ease-in-out;
+}
+</style></head><body style="display:flex;flex-direction:column;height:100vh">
+<nav class='navbar navbar-expand-lg navbar-light bg-light'>    <div class='container-fluid'>        <div class='collapse navbar-collapse' id='navbarText'>            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>                <li class='nav-item'>                    <a class='nav-link ' aria-current='page' href='/moviedb/public_html/movies/list.php'>Фильмы</a>                </li>                <li class='nav-item'>                    <a class='nav-link ' href='/moviedb/public_html/persons/list.php'>Люди</a>                </li>                <li class='nav-item'>                    <a class='nav-link ' href='/moviedb/public_html/genres/list.php'>Жанры</a>                </li>                <li class='nav-item'>                    <a class='nav-link ' href='/moviedb/public_html/ageratings/list.php'>Возрастные рейтинги</a>                </li>                <li class='nav-item'>                    <a class='nav-link ' href='/moviedb/public_html/countries/list.php'>Страны</a>                </li>            </ul>            <ul class='navbar-nav'>                <li class='nav-item'>                    <a class='nav-link active' aria-current='page' href='/moviedb/public_html/login.php'>Войти</a>                </li>            </ul>        </div>    </div></nav><div class="container" style="padding-top: 1em;">
+    <div class="row align-items-center" style="height: 100%;">
+        <div class="col"></div>
+        <div class="col-4">
+            <form method="post" action="/moviedb/public_html/login.php">
+                                <h1>Авторизация</h1>
+                <div class="mb-3">
+                    <label for="login" class="form-label">Логин</label>
+                    <input type="text" class="text-input form-control " name="login">
+                                    </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Пароль</label>
+                    <input type="password" class="text-input form-control " name="password">
+                                    </div>
+                <div class="container">
+                    <div class="row no-gutters">
+                        <div class="col no-gutters float-start text-start"
+                             style="padding-left: 0; padding-right: 0;">
+                            <button type="submit" class="btn btn-primary">Войти</button>
+                        </div>
+                        <div class="col text-end">
+                            <a class="align-middle text-decoration-none" style="line-height: 2.5em;"
+                               href="/moviedb/public_html/register.php">Зарегистрироваться</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+<script>
+    const inputs = document.getElementsByClassName('text-input');
+
+    const inputHandler = function(e) {
+        e.target.classList.remove("is-invalid");
+    }
+
+    for (let index = 0; index < inputs.length; ++index) {
+        const element = inputs[index];
+        element.addEventListener('input', inputHandler);
+    }
+</script>
+
+</body>
+</html>
